@@ -11,6 +11,8 @@ jobs:
     name: Deploy to Cloudflare Workers
     steps:
       - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
       - name: Deploy
         uses: cloudflare/wrangler-action@v4
         with:
